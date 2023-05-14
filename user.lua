@@ -108,18 +108,13 @@ function bot_main(me)
             closest_bullet = object
             bullet_act_id = closest_bullet:id()
             bullet_act_pos = closest_bullet:pos()
-            print("picklin t'agrada la tita?")
             if bullet_act_id == bullet_ant_id then
                 bullet_dir = bullet_act_pos:sub(bullet_ant_pos)
                 local dist_ant = vec.distance(me_pos, bullet_ant_pos)
                 local dist_act = vec.distance(me_pos, bullet_act_pos)
-                print("kekw")
-                print(dist_ant)
-                print(dist_act)
                 if (dist_ant - dist_act) == 40 then
                    bullet_dir = vec.new(bullet_dir:x()*math.sin(math.deg(90)), bullet_dir:y())
                    --me:move(bullet_dir)
-                   print(bullet_dir)
                    --priority_move = 1
                 end
             end
